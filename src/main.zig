@@ -32,17 +32,17 @@ pub fn main() !void {
 
     // Calculate and print EV
     const ev_result = ev(fstop_val, iso_val, shutter_val);
-    try stdout.print("EV: {d:.6}\n", .{ev_result});
+    try stdout.print("EV: {d:.15}\n", .{ev_result});
 
     // Calculate and print F-stop
     const stop_result = stop(ev_val, iso_val, shutter_val);
-    try stdout.print("F-stop: {d:.6}\n", .{stop_result});
+    try stdout.print("F-stop: {d:.15}\n", .{stop_result});
 
     // Calculate and print ISO
     const iso_result = iso(fstop_val, ev_val, shutter_val);
-    try stdout.print("ISO: {d:.6}\n", .{iso_result});
+    try stdout.print("ISO: {d:.15}\n", .{iso_result});
 
     // Calculate and print shutter speed
     const shutter_result = shutter(fstop_val, iso_val, ev_val);
-    try stdout.print("Shutter speed: 1/{d:.6}\n", .{1.0 / shutter_result});
+    try stdout.print("Shutter speed: 1/{d:.15}\n", .{1.0 / shutter_result});
 }
